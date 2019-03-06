@@ -43,8 +43,9 @@ public class FinagoAssignmentImproved {
             Source source = new DOMSource(document);
             Result outputTarget = new StreamResult(new File(outputFileName));
             transformer.transform(source, outputTarget);
+            System.out.println("Program ran succesfully, you can find your new csv file at the root directory of this project under the name " +outputFileName);
         } catch (TransformerException | SAXException | IOException | ParserConfigurationException ex) {
-            Logger.getLogger(FinagoAssignmentImproved.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("One of the filenames is not present in the directory, please check the filename and try again");
         }
     }
     
